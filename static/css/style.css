@@ -1,0 +1,33 @@
+body {
+    font-family: Calibri, sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 20px;
+    max-width: 600px;
+}
+h1 {
+    color: #000000;
+    text-align: center;
+
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    padding: 15px;
+    align-items: center;
+    display: flex;
+
+}
+form {
+    display: flex
+    
+}
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+}
+.delete-button {
+    background-color: #ff0000;
+}
