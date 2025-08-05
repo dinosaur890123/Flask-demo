@@ -1,5 +1,5 @@
 body {
-    font-family: Calibri, sans-serif;
+    font-family: Calibri;
     background-color: #FFFFFF;
     margin: 0;
     padding: 20px;
@@ -15,19 +15,24 @@ ul {
     padding: 0;
 }
 li {
-    padding: 15px;
+    padding: 10px;
     align-items: center;
     display: flex;
+    justify-content: space-between;
 
 }
 form {
-    display: flex
+    display: flex;
+    margin-top: auto;
     
 }
 button {
     padding: 10px 20px;
     background-color: #007BFF;
+    cursor: pointer;
 }
 .delete-button {
-    background-color: #ff0000;
+    background-color: #FF0000;
+    border-radius: 5px;
+    text-decoration: none;
 }
