@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form action="{{ url_for('edit_task', task_index=task_index) }}" method="POST">
+        <div class="form-inputs">
+            <input type="text" name="task_text" value="{{ task.text }}" required>
+            <select name="priority">
+                <option value="High" {% if task.priority == 'High' %}selected{% endif %}>High Priority</option>
+                <option value="Medium" {% if task.priority == 'Medium' %}selected{% endif %}>Medium Priority</option>
+                <option value="Low" {% if task.priority == 'Low' %}selected{% endif %}>Low Priority</option>
+            </select>
+            <input type="date" name="due_date" value="{{ task.due_date }}">
+        </div>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

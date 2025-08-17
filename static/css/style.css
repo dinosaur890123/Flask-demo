@@ -2,7 +2,7 @@ body {
     font-family: Calibri;
     background-color: #FFFFFF;
     margin: 0;
-    padding: 20px;
+    padding: 20px auto;
     max-width: 600px;
 }
 h1 {
@@ -21,6 +21,9 @@ li {
     justify-content: space-between;
 
 }
+input[type="text"] {
+    padding: 10px;   
+}
 form {
     display: flex;
     margin-top: auto;
@@ -35,4 +38,24 @@ button {
     background-color: #FF0000;
     border-radius: 5px;
     text-decoration: none;
+    
+    
+}
+.priority-High { border-left: 5px solid #dc3545; }
+.priority-Medium { border-left: 5px solid #ffc107; }
+.priority-Low { border-left: 5px solid #28a745; }
+.task-details {
+    color: #123
+}
+.priority-high {
+    color: #FF0000;
+}
+.form-inputs {
+    flex-grow: 1;
+    display: flex;
+}
+.form-inputs input, .form-inputs select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
