@@ -1,61 +1,116 @@
 body {
-    font-family: Calibri;
-    background-color: #FFFFFF;
-    margin: 0;
-    padding: 20px auto;
+    font-family: Calibri, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
     max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-h1 {
-    color: #000000;
-    text-align: center;
 
+h1 {
+    color: #444;
+    text-align: center;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
 }
+
 li {
-    padding: 10px;
-    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
 
-}
-input[type="text"] {
-    padding: 10px;   
-}
-form {
-    display: flex;
-    margin-top: auto;
-    
-}
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    cursor: pointer;
-}
-.delete-button {
-    background-color: #FF0000;
-    border-radius: 5px;
-    text-decoration: none;
-    
-    
-}
 .priority-High { border-left: 5px solid #dc3545; }
 .priority-Medium { border-left: 5px solid #ffc107; }
 .priority-Low { border-left: 5px solid #28a745; }
+
 .task-details {
-    color: #123
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 4px;
 }
-.priority-high {
-    color: #FF0000;
+
+.task-actions {
+    display: flex;
+    gap: 10px;
 }
+
+form {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
 .form-inputs {
     flex-grow: 1;
     display: flex;
+    gap: 10px;
 }
+
 .form-inputs input, .form-inputs select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    flex-grow: 1;
+}
+
+input[name="task_text"] {
+    flex-grow: 2;
+}
+
+button[type="submit"] {
+    border: none;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-button, .edit-button {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.edit-button {
+    background-color: #6c757d;
+}
+
+.flash-messages {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.flash {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
