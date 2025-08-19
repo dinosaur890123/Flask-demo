@@ -96,5 +96,5 @@ def delete_task(task_index):
         flash('Invalid task index.', 'error')
     return redirect(url_for('home'))
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=35939)
 app.run(host='0.0.0.0', port=35939)
