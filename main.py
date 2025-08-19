@@ -49,7 +49,6 @@ def edit_task(task_index):
     if not (0 <= task_index < len(sorted_todos)):
         flash('Invalid task index.', 'error')
         return redirect(url_for('home'))
-
     task_to_edit_in_sorted = sorted_todos[task_index]
     original_task = next((task for task in todos if task == task_to_edit_in_sorted), None)
 
@@ -66,13 +65,28 @@ def edit_task(task_index):
         return redirect(url_for('home'))
     else:
         return render_template('edit.html', task=original_task, task_index=task_index)
-
+@app.route('/complete/<int:task_index>')
+def complete_task(task_index):
+    todos = load_todos()
+    priority_map = {"High": 1, "Medium": 2, "Low": 3}
+    sorted_todos = sorted(todos, key=lambda x: priority_map.get(x.get('priority'), 3))
+    if 0 <= task_index < len(sorted_todos):
+        task_to_complete_sorted = sorted_todos[task_index]
+        original_task = None
+        for task in todos: 
+            if task == task_to_complete_sorted:
+                original_task = task
+                break
+        if original_task:
+            original_task['status'] = 'complete'
+            save_todos(todos)
+            flash('Task complete', 'success')
+    return redirect(url_for('home'))
 @app.route('/delete/<int:task_index>')
 def delete_task(task_index):
     todos = load_todos()
     priority_map = {"High": 1, "Medium": 2, "Low": 3}
     sorted_todos = sorted(todos, key=lambda x: priority_map.get(x.get('priority'), 3))
-
     if 0 <= task_index < len(sorted_todos):
         task_to_remove = sorted_todos[task_index]
         todos.remove(task_to_remove)
@@ -81,6 +95,5 @@ def delete_task(task_index):
     else:
         flash('Invalid task index.', 'error')
     return redirect(url_for('home'))
-
 if __name__ == '__main__':
     app.run(debug=True)
